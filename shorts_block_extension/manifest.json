@@ -1,0 +1,23 @@
+{
+    "manifest_version": 3,
+    "name": "Shorts Blocker for Youtube",
+    "version": "1.0",
+    "description": "Hides Youtube Shorts from your homepage, subscriptions, and search results.",
+    "permissions": [
+        "storage"
+    ],
+    "host_permissions": [
+        "https://*.youtube.com/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": ["https://youtube.com/*"],
+            "js": ["contentScript.js"],
+            "run_at": "document_end"
+        }
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_title": "Configure Shorts Blocker"
+    }
+}
